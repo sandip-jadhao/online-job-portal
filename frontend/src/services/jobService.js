@@ -1,7 +1,7 @@
 // jobService.js
 export const getAllJobs = () => {
   return new Promise((resolve, reject) => {
-    fetch("http://localhost:4000/jobs/listAllJobs") 
+    fetch("https://job-portal-dm6d.onrender.com/jobs/listAllJobs") 
       .then((res) => res.json())
       .then((data) => {
         if (data.data) {
