@@ -1,7 +1,7 @@
 
 export const getAllCompanies = () => {
   return new Promise((resolve, reject) => {
-    fetch("http://localhost:4000/jobs/viewAllCompanies") // 
+    fetch("https://job-portal-dm6d.onrender.com/jobs/viewAllCompanies") // 
       .then((res) => res.json())
       .then((data) => {
         if (data.data) {
