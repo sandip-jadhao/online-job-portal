@@ -2,24 +2,24 @@ import axios from 'axios';
 
 export const registerEmployer=(formData)=>{
     let promise= axios
-    .post("http://localhost:4000/hr/hrRegister",formData)
+    .post("https://job-portal-dm6d.onrender.com/hr/hrRegister",formData)
     return promise;
 }
 
 export const loginEmployee=(formData)=>{
-    let promise = axios.post('http://localhost:4000/auth/hrLogin',formData)
+    let promise = axios.post('https://job-portal-dm6d.onrender.com/auth/hrLogin',formData)
     return promise;
 };
 
 export const getEmployerProfile=(token)=>{
-    let promise = axios.get("http://localhost:4000/hr/hrProfile",{
+    let promise = axios.get("https://job-portal-dm6d.onrender.com/hr/hrProfile",{
         headers:{Authorization:`Bearer ${token}`},
     })
     return promise;
 };
 
 export const createJob = (jobData, token) => {
-  return axios.post(`http://localhost:4000/hr/createJob`, jobData, {
+  return axios.post(`https://job-portal-dm6d.onrender.com/hr/createJob`, jobData, {
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
@@ -28,20 +28,20 @@ export const createJob = (jobData, token) => {
 };
 
 export const getEmployerJobs =(token)=>{
-  return axios.get("http://localhost:4000/hr/viewJob",{
+  return axios.get("https://job-portal-dm6d.onrender.com/hr/viewJob",{
     headers:{Authorization:`Bearer ${token}`},  
   })
 };
 
 export const deleteJob =(j_id,token)=>{
-  return axios.delete(`http://localhost:4000/hr/deleteJob/${j_id}`,{
+  return axios.delete(`https://job-portal-dm6d.onrender.com/hr/deleteJob/${j_id}`,{
      headers:{ Authorization:`Bearer ${token}`},
 });
 };
 
 export const updateJob = (j_id, formData, token) => {
   return axios.put(
-    `http://localhost:4000/hr/updateJobById/${j_id}`,
+    `https://job-portal-dm6d.onrender.com/hr/updateJobById/${j_id}`,
     formData,
     {
       headers: { Authorization: `Bearer ${token}` }
@@ -50,21 +50,21 @@ export const updateJob = (j_id, formData, token) => {
 };
 
 export const getApplicants =(token)=>{
-  let promise=axios.get("http://localhost:4000/hr/getApplicants",{
+  let promise=axios.get("https://job-portal-dm6d.onrender.com/hr/getApplicants",{
     headers:{ Authorization:`Bearer ${token}`},
   })
   return promise;
 };
 
 export const getScheduledInterviews = (token) => {
-  return axios.get("http://localhost:4000/schedules/getScheduledInterviews", {
+  return axios.get("https://job-portal-dm6d.onrender.com/schedules/getScheduledInterviews", {
     headers: { Authorization: `Bearer ${token}` },
   });
 };
 
 export const searchJobsByName = (j_name, token) => {
   return axios.post(
-    `http://localhost:4000/hr/searchJob`,
+    `https://job-portal-dm6d.onrender.com/hr/searchJob`,
     { j_name },
     {
       headers: { Authorization: `Bearer ${token}` },
@@ -74,7 +74,7 @@ export const searchJobsByName = (j_name, token) => {
 
 // New function for downloading resume
 export const downloadResume = (filename, token) => {
-  return axios.get(`http://localhost:4000/hr/downloadResume/${filename}`, {
+  return axios.get(`https://job-portal-dm6d.onrender.com/hr/downloadResume/${filename}`, {
     headers: { Authorization: `Bearer ${token}` },
     responseType: 'blob', // Important for file download
   });
