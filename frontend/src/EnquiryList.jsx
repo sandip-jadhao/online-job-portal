@@ -23,7 +23,7 @@ const EnquiryList = ({ showModal, setShowModal, token }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://job-portal-dm6d.onrender.com/admin/deleteEnquiry/${id}`, {
+      await axios.delete(`https://job-portal-dm6d.onrender.com/admin/deleteEnquiry/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setEnquiries(enquiries.filter((enq) => enq.id !== id));

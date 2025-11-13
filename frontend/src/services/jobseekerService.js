@@ -66,7 +66,7 @@ export const getAppliedJobs = (token) => {
 // };
 
 export const getScheduledInterview=(token)=>{
-    return axios.get(`http://job-portal-dm6d.onrender.com/users/myScheduleInterview`,
+    return axios.get(`https://job-portal-dm6d.onrender.com/users/myScheduleInterview`,
         { headers: { Authorization:`Bearer ${token}` } }
     )
 }

@@ -22,11 +22,11 @@ const AuthPage = () => {
     try {
       let loginUrl = "";
       if (role === "admin") {
-        loginUrl = "http://job-portal-dm6d.onrender.com/auth/adminLogin";
+        loginUrl = "https://job-portal-dm6d.onrender.com/auth/adminLogin";
       } else if (role === "hr") {
-        loginUrl = "http://job-portal-dm6d.onrender.com/auth/hrLogin";
+        loginUrl = "https://job-portal-dm6d.onrender.com/auth/hrLogin";
       } else if (role === "user") {
-        loginUrl = "http://job-portal-dm6d.onrender.com/auth/login";
+        loginUrl = "https://job-portal-dm6d.onrender.com/auth/login";
       }
       const response = await axios.post(loginUrl, {
         email: formData.email,

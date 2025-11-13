@@ -189,7 +189,7 @@ const JobSeekerEditProfile = () => {
           {formData.resume && typeof formData.resume === "string" && (
             <div className="mb-3">
               <a
-                href={`http://job-portal-dm6d.onrender.com/${formData.resume}`}
+                href={`https://job-portal-dm6d.onrender.com/${formData.resume}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
